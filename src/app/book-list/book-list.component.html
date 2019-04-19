@@ -1,0 +1,11 @@
+<hr/>
+<div>
+  <h3>{{book.name}}</h3>
+</div>
+<div>
+  <h4>{{book.author}}</h4>
+</div>
+<div>{{book.count}}</div>
+<div>{{book.created}}</div>
+<button (click)="onDelete(book._id)">Delete</button> &nbsp;
+<button (click)="onUpdate(book)">Update</button>

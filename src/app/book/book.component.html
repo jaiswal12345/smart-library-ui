@@ -1,0 +1,34 @@
+
+<form [formGroup]="frm" novalidate>
+    <div>
+        <div>
+            <input type="hidden" formControlName="_id" />
+            <input type="text" placeholder="book name" formControlName="name" />&nbsp;
+            <span *ngIf="frm.controls.name.touched && frm.controls.name?.errors?.required">Required</span>
+        </div>
+        <br />
+        <div>
+            <input type="text" placeholder="desc" formControlName="desc" />&nbsp;
+            <span *ngIf="frm?.controls?.desc?.touched && frm.controls.desc?.errors?.required">Required</span>
+        </div>
+        <br />
+        <div>
+            <input type="text" placeholder="author" formControlName="author" />&nbsp;
+            <span *ngIf="frm?.controls?.author?.touched && frm.controls.author?.errors?.required">Required</span>
+        </div>
+        <br />
+        <div>
+            <input type="number" placeholder="no of books" formControlName="count" />&nbsp;
+            <span *ngIf="frm?.controls?.count?.touched && frm.controls.count?.errors?.required">Required</span>
+        </div>
+        <br />
+        <div>
+            <button [disabled]="frm.invalid" (click)="onSave()">{{buttonName}}</button>
+        </div>
+    </div>
+</form>
+<h3>Book List</h3>
+<br/>
+<div *ngFor="let book of books">
+    <app-book-list [book]="book" (notify)="onNotify()" (updateNotify)="onUpdateNotify($event)"></app-book-list>
+</div>
