@@ -4,8 +4,19 @@ import { HttpClient } from "@angular/common/http";
 export class BookService {
     constructor(private httpClient: HttpClient) {
     }
-    get() {
-        return this.httpClient.get("https://smartlibraraynode.herokuapp.com/api/books");
+    url:string ; 
+    get(data) { 
+        this.url= "https://smartlibraraynode.herokuapp.com/api/books/?";
+        if (data.name){
+            this.url = this.url+"name="+data.name;
+        }
+          if (data.author){
+            this.url = this.url+"author="+data.author;
+        }
+           if (data.count){
+            this.url = this.url+"count="+data.count;
+        }
+        return this.httpClient.get(this.url);
     }
     post(data: any) {
         return this.httpClient.post("https://smartlibraraynode.herokuapp.com/api/books", data);

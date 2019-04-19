@@ -1,5 +1,14 @@
-
 <form [formGroup]="frm" novalidate>
+    <div><b>Filters:</b>&nbsp;&nbsp;
+        <input type="text" placeholder="book name" formControlName="bookname" />&nbsp;
+        <input type="text" placeholder="author name" formControlName="authorname" />&nbsp;
+        <input type="text" placeholder="count" formControlName="countavailable" />&nbsp;
+        <button (click)="onFilter()">GO</button> &nbsp;
+        <button (click)="onReset()">Reset</button>
+    </div>
+    &nbsp;
+    <hr/>
+    <div><b> Add Books</b></div>
     <div>
         <div>
             <input type="hidden" formControlName="_id" />
