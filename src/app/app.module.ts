@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UserService } from "src/app/shared/user.service";
 import { RouterModule } from "@angular/router";
-import { Interceptor } from "src/app/shared/interceptor";
+//import { Interceptor } from "src/app/shared/interceptor";
 const ROUTES = [
   { path: '', component: BookComponent },
   { path: 'login', component: LoginComponent },
@@ -25,7 +25,7 @@ const ROUTES = [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(ROUTES)
   ],
   providers: [BookService, UserService,
-    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
+   // { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
