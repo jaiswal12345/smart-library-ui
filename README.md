@@ -31,8 +31,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # installation guide:
 1.Install angular:
+
   npm install -g @angular/cli
-2.npm update
+  
+2.npm update.
 
 Run application:
 ng serve -o
