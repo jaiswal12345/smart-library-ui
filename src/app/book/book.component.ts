@@ -11,7 +11,7 @@ export class BookComponent implements OnInit, OnDestroy {
     book: any = {};
     frm: FormGroup;
     obs;
-    buttonName: String = "Save";
+    buttonName: String = "Add";
     save: any;
     filter= {};
     constructor(private bookService: BookService, private fb: FormBuilder) { }
@@ -29,15 +29,16 @@ export class BookComponent implements OnInit, OnDestroy {
         });
         this.get();
     }
+
     get() {
         this.obs = this.bookService.get(this.filter)
             .subscribe(
             response => {
-                this.books = response["book"]
+                this.books = response["book"];
+                this.frm.reset();
             },
             (err) => console.log(err)
-            );
-        
+            );    
     }
 
     onFilter() {
@@ -56,7 +57,6 @@ export class BookComponent implements OnInit, OnDestroy {
             (err) => console.log(err)
         );
     }
-
      onReset() {
        this.get();
     }

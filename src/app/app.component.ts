@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<app-book></app-book>' 
+  template: '<router-outlet></router-outlet>' 
 })
 export class AppComponent {
   title = 'smart-library-ui';
